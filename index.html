@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appcita - Soluciones Digitales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='black'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-size='75' font-family='Arial, Helvetica, sans-serif' font-weight='bold' fill='%234ade80'>A</text></svg>">
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@19.1.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.1.0/client",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/"
+  }
+}
+</script>
+<style>
+  /* Custom CSS for animated gradient text */
+  .animate-gradient-x {
+    animation: gradient-x 5s ease infinite;
+  }
+  .bg-size-200 {
+    background-size: 200% 200%;
+  }
+  @keyframes gradient-x {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Ensure smooth scrolling for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* For AnimatedCheckCircleIcon */
+  .animated-check-circle-bg {
+    animation: appcita-scale-in 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+    transform-origin: center;
+    transform: scale(0);
+  }
+
+  .animated-check-mark-simple {
+    animation: appcita-fade-scale-in 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.2s forwards; /* 0.2s delay */
+    transform-origin: center;
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  @keyframes appcita-scale-in {
+    to {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes appcita-fade-scale-in {
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animated-check-circle-bg {
+      animation: none;
+      transform: scale(1);
+    }
+    .animated-check-mark-simple {
+      animation: none;
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  /* For AnimatedHamburgerIcon */
+  .hamburger-line {
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.3s ease-in-out;
+    transform-origin: center;
+  }
+  /* Top line transforms into top part of X */
+  .hamburger-line-top.open {
+    transform: translateY(5px) rotate(45deg) translateX(-2px); 
+  }
+  /* Middle line fades out */
+  .hamburger-line-middle.open {
+    opacity: 0;
+  }
+  /* Bottom line transforms into bottom part of X */
+  .hamburger-line-bottom.open {
+    transform: translateY(-5px) rotate(-45deg) translateX(-2px); 
+  }
+</style>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-black text-gray-200 antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/index.tsx"></script> 
+    <!-- build.mjs will change /src/index.tsx to /index.js and remove importmap for production -->
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

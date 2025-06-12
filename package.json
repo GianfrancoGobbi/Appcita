@@ -1,0 +1,21 @@
+{
+  "name": "appcita-site",
+  "version": "1.0.0",
+  "description": "Appcita - Soluciones Digitales",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "start": "echo \"Para desarrollo, considera usar un servidor de desarrollo como Vite, o sirve este directorio raíz. Para producción, compila con 'npm run build' y sirve el directorio 'dist'.\" && exit 1"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "esbuild": "^0.20.2",
+    "fs-extra": "^11.2.0",
+    "typescript": "^5.5.4"
+  }
+}
